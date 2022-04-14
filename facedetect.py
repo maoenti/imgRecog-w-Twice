@@ -38,9 +38,9 @@ def crop_face(filename, result_list):
 		# plot face
         pyplot.imshow(data[y1:y2, x1:x2])
 	# show the plot
-    pyplot.savefig('new' + filename, bbox_inches='tight', pad_inches = 0., transparent = True)
+    # pyplot.savefig('new' + filename, bbox_inches='tight', pad_inches = 0., transparent = True)
 
-filename = 'group.jpg'
+filename = '154145805_781249495816213_637559880100306218_n.jpg'
 # load image from file
 pixels = pyplot.imread(filename)
 # create the detector, using default weights
@@ -48,4 +48,4 @@ detector = MTCNN()
 # detect faces in the image
 faces = detector.detect_faces(pixels)
 # display faces on the original image
-crop_face(filename, faces)
+draw_image_with_boxes(filename, faces)
